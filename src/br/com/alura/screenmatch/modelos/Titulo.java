@@ -23,7 +23,7 @@ public class Titulo implements Comparable<Titulo> {
                     "porque tema mais de 4 caracteres.");
         }
         this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
-        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0, 2));
+        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().replaceAll("[^0-9]", ""));
     }
 
     public String getNome() {
